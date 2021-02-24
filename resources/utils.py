@@ -16,6 +16,7 @@ from telethon import events
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 CMD_LIST = {}
+from var import Var
 session_name = str(Var.STRING_SESSION)
 if session_name.endswith("="):
      bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
