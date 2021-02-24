@@ -9,8 +9,7 @@ from os import environ, execle, path, remove
 CMD_LIST = {}
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-
-from . import runcmd
+from resources.utils import admin_cmd
 
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
@@ -137,9 +136,7 @@ async def update(event, repo, ups_rem, ac_br):
     execle(sys.executable, *args, environ)
     return
 
-
-@ultroid_cmd(
-    pattern=r"update($| (now|deploy))")
+@borg.on(admin_cmd(outgoing=True, pattern=r"update($| (now|deploy))"))
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     conf = event.pattern_match.group(1).strip()
