@@ -15,25 +15,14 @@ from time import gmtime, strftime
 from telethon import events
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
-
-from var import Var 
-ENV = bool(os.environ.get("ENV", False))
-
-if ENV:
-    from .Config import Config
-else:
-    if os.path.exists("config.py"):
-        from config import Development as Config
 CMD_LIST = {}
-
-if Var.STRING_SESSION:
-    session_name = str(Var.STRING_SESSION)
-    if session_name.endswith("="):
-        bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
-    else:
-        bot = TelegramClient(
-            "TG_BOT_TOKEN", api_id=Var.APP_ID, api_hash=Var.API_HASH
-        ).start(bot_token=Var.STRING_SESSION)
+session_name = str(Var.STRING_SESSION)
+if session_name.endswith("="):
+     bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
+else:
+     bot = TelegramClient(
+         "TG_BOT_TOKEN", api_id=Var.APP_ID, api_hash=Var.API_HASH
+     ).start(bot_token=Var.STRING_SESSION)
 
 def admin_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
