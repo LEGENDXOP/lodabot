@@ -136,7 +136,8 @@ async def update(event, repo, ups_rem, ac_br):
     execle(sys.executable, *args, environ)
     return
 
-@borg.on(admin_cmd(outgoing=True, pattern=r"update($| (now|deploy))"))
+
+@ultroid_cmd(admin_cmd(outgoing=True, pattern=r"update($| (now|deploy))"))
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     conf = event.pattern_match.group(1).strip()
