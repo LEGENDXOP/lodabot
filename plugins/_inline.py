@@ -1,9 +1,3 @@
-# Ultroid - UserBot
-# Copyright (C) 2020 TeamUltroid
-#
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
-# PLease read the GNU Affero General Public License in
-# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 import os
 import random
@@ -34,7 +28,7 @@ Pʟᴜɢɪɴs ~ {}**
 
 if Var.ADDONS:
     zhelps = """
-[Uʟᴛʀᴏɪᴅ Sᴜᴘᴘᴏʀᴛ](t.me/ultroidsupport)
+[Uʟᴛʀᴏɪᴅ Sᴜᴘᴘᴏʀᴛ](t.me/dclogger)
 
 **Hᴇʟᴘ Mᴇɴᴜ Oғ {}.
 
@@ -42,7 +36,7 @@ Aᴅᴅᴏɴs ~ {}**
 """
 else:
     zhelps = """
-[Uʟᴛʀᴏɪᴅ Sᴜᴘᴘᴏʀᴛ](t.me/ultroidsupport)
+[Uʟᴛʀᴏɪᴅ Sᴜᴘᴘᴏʀᴛ](t.me/dclogger)
 
 **Hᴇʟᴘ Mᴇɴᴜ Oғ {}.
 
@@ -60,9 +54,9 @@ async def e(o):
         b = o.builder
         uptime = grt((time.time() - start_time))
         ALIVEMSG = """
-**The Ultroid Userbot...**\n\n
+**The Loda Userbot...**\n\n
 ✵ **Owner** - `{}`
-✵ **Ultroid** - `{}`
+✵ **Loda** - `{}`
 ✵ **UpTime** - `{}`
 ✵ **Python** - `{}`
 ✵ **Telethon** - `{}`
@@ -84,7 +78,7 @@ async def e(o):
                 thumb=InputWebDocument(ULTROID_PIC, 0, "image/jpeg", []),
             )
         ]
-        await o.answer(res, switch_pm=f"👥 ULTROID PORTAL", switch_pm_param="start")
+        await o.answer(res, switch_pm=f"👥 LEL", switch_pm_param="start")
 
 
 if Var.BOT_USERNAME is not None and asst is not None:
@@ -99,7 +93,7 @@ if Var.BOT_USERNAME is not None and asst is not None:
             result = builder.article(
                 title="Help Menu",
                 description="Help Menu - UserBot | Telethon ",
-                url="https://t.me/TheUltroid",
+                url="https://t.me/dclogger",
                 thumb=InputWebDocument(ULTROID_PIC, 0, "image/jpeg", []),
                 text=f"** Bᴏᴛ Oғ {OWNER_NAME}\n\nMᴀɪɴ Mᴇɴᴜ\n\nPʟᴜɢɪɴs ~ {len(PLUGINS) - 4}\nAᴅᴅᴏɴs ~ {len(ADDONS)}**",
                 buttons=[
