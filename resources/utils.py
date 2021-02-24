@@ -33,11 +33,6 @@ from var import Var
 
 StartTime = time.time()
 anieversion = "2.0.4"
-APP_ID = 1822414
-API_HASH = "46f1888d3f68396bad08c92ac4d7f00a"
-STRING_SESSION = "1BVtsOHgBu5dZyqOThV8JcLmOI_ugmFKRoUVNmw4UUUMGoVDOGdph_0htogBNOyI5lEIiM4ljiFRv3uHDijS36XVCVPD75ubbBFctdJEur8Rb-uOnDV6AqqF4gQZ32VRUK7TZzvbzoMCLQQywtu8PHvELTSp_t1sNW8fystWeCHDQVyAl5L1inS6Vliz-YHzvPHqcsPTeQK2sVp_1Jj7lId64O9z9HrLijMifPJzhL5w7uY3uSYucZ2x5MBI5U6JDYYhFSxbWiVDmLuMs-J_IQGYgw15VUYTM3FjFfYpCm52h5m9GG3x16XvxxnA8AXBp-hFw1rGcD-CRmBKlYuLN6VcjfCSb2ZQ="
-session_name = STRING_SESSION
-bot = TelegramClient(StringSession(session_name), APP_ID, API_HASH)
 def admin_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
