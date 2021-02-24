@@ -16,14 +16,35 @@ from telethon import events
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 CMD_LIST = {}
+import logging
+import os
+import sys
+import time
+from distutils.util import strtobool as sb
+from logging import DEBUG, INFO, basicConfig, getLogger
+
+from dotenv import load_dotenv
+from requests import get
+from telethon import TelegramClient
+from telethon.sessions import StringSession
+
+from resources.Config import Config
 from var import Var
-session_name = str(Var.STRING_SESSION)
-if session_name.endswith("="):
-     bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
+
+StartTime = time.time()
+anieversion = "2.0.4"
+
+if Var.STRING_SESSION:
+    session_name = str(Var.STRING_SESSION)
+    if session_name.endswith("="):
+        bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
+    else:
+        bot = TelegramClient(
+            "TG_BOT_TOKEN", api_id=Var.APP_ID, api_hash=Var.API_HASH
+        ).start(bot_token=Var.STRING_SESSION)
 else:
-     bot = TelegramClient(
-         "TG_BOT_TOKEN", api_id=Var.APP_ID, api_hash=Var.API_HASH
-     ).start(bot_token=Var.STRING_SESSION)
+    session_name = "startup"
+    bot = TelegramClient(session_name, Var.APP_ID, Var.API_HASH)
 
 def admin_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
