@@ -1,11 +1,11 @@
 {
-    "name": "Ultroid UserBot",
+    "name": "Loda UserBot",
     "description": "Pluggable telegram userbot, made in python using Telethon.",
-    "logo": "https://telegra.ph/file/1518e15421d21c5afd9af.jpg",
+    "logo": "https://telegra.ph/file/284a59b8825f937ead209.jpg",
     "keywords": ["Telethon", "telegram", "userbot", "python"],
-    "repository": "https://github.com/TeamUltroid/Ultroid",
+    "repository": "https://github.com/Amarnathcdj/lodabot",
     "website": "https://ultroid.now.sh/",
-    "success_url": "https://t.me/TheUltroid",
+    "success_url": "https://t.me/dclogger",
     "stack": "container",
     "env": {
         "API_ID": {
