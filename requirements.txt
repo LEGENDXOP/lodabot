@@ -2,6 +2,7 @@ py-Ultroid==2021.2.21
 asyncurban
 carbonnow
 cairosvg
+sqlalchemy
 emoji
 GitPython
 googletrans==3.1.0a0
