@@ -6,7 +6,7 @@
 import asyncio
 import sys
 from os import environ, execle, path, remove
-
+CMD_LIST = {}
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
