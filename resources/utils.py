@@ -30,7 +30,7 @@ from telethon.sessions import StringSession
 
 from resources.Config import Config
 from var import Var
-
+COMMAND_HAND_LER = r"\."
 StartTime = time.time()
 anieversion = "2.0.4"
 def admin_cmd(pattern=None, command=None, **args):
@@ -53,12 +53,12 @@ def admin_cmd(pattern=None, command=None, **args):
             except BaseException:
                 CMD_LIST.update({file_test: [cmd]})
         else:
-            if len(Config.COMMAND_HAND_LER) == 2:
-                catreg = "^" + Config.COMMAND_HAND_LER
-                reg = Config.COMMAND_HAND_LER[1]
+            if len(COMMAND_HAND_LER) == 2:
+                catreg = "^" + COMMAND_HAND_LER
+                reg = COMMAND_HAND_LER[1]
             elif len(Config.COMMAND_HAND_LER) == 1:
-                catreg = "^\\" + Config.COMMAND_HAND_LER
-                reg = Config.COMMAND_HAND_LER
+                catreg = "^\\" + COMMAND_HAND_LER
+                reg = COMMAND_HAND_LER
             args["pattern"] = re.compile(catreg + pattern)
             if command is not None:
                 cmd = reg + command
